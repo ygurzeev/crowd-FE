@@ -1,0 +1,7 @@
+<h1>Events around you</h1>
+
+
+<div class="row">
+  <button (click)="createEvent()">Create New Event</button>
+  <app-event-thumb *ngFor="let event of events" [event]="event"  routerLink="/event/{{event._id}}"></app-event-thumb>
+</div>

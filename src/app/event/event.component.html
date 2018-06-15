@@ -1,0 +1,31 @@
+<div class="event-wrapper" *ngIf="event">
+  <h1>{{event.name}}</h1>
+
+
+
+  <div class="form-group">
+    <label for="file">Choose File</label>
+    <input type="file"
+           id="file"
+           (change)="handleFileInput($event.target.files)">
+  </div>
+
+  <div class="videos-container" *ngIf="event.videos">
+    <div class="row">
+      <div *ngFor="let video of event.videos; let i = index" class="video-container">
+        <video #video{{i}} src="{{rootUrl+video.location}}"
+               class="event-video"
+               loop
+               onloadedmetadata="this.muted = true"
+               (mouseenter)="onHover($event)"
+               (mouseleave)="onLeave($event)"
+               (timeupdate)="onTimeUpdate($event, i)"
+                >
+
+        </video>
+        <div class="seek-bar" id="seek{{i}}"></div>
+      </div>
+    </div>
+
+  </div>
+</div>

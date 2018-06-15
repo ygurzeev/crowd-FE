@@ -1,0 +1,12 @@
+.event-container{
+  background: #FAFAFA;
+  border:solid 1px #F0F0F0;
+  padding:20px;
+  width:200px;
+  text-align: center;
+  margin:5px 10px;
+  cursor: pointer;
+}
+.event-container:hover{
+  border:solid 2px #E0E0E0;
+}
